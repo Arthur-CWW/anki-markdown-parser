@@ -3,13 +3,6 @@ let DEBUG = true;
 function lineParser(md: string) {
   let result = '';
   const whitespace = [' ', '\n', '\t'];
-  // const touching = (str: string, i: number, open: boolean) =>
-  //   open
-  //     ? str[i + 1] !== undefined && whitespace.findIndex((char) => char === str[i + 1]) === -1
-  //     : str[i - 1] !== undefined &&
-  //       whitespace.findIndex((char) => char === str[i - 1]) ===
-  //         -1; /**if open then the next character must be non white , if closing then the previous character must be non white */
-
   md.split('<br>').forEach((line) => {
     if (line.startsWith('#')) {
       const headerLevel = line.match(/#+/)![0].length;
